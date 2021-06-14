@@ -1,0 +1,47 @@
+.footer {
+  ul,
+  li,
+  a,
+  a::after,
+  a::before {
+    text-decoration: none;
+    list-style: none;
+  }
+  position: sticky;
+  height: 100vh;
+  padding-top: 6.5rem;
+
+  .container {
+    padding-top: 0;
+    background: $accent-secondary;
+    height: 100%;
+    border-top: 5px solid $lightGray;
+    flex-direction: column;
+  }
+
+  &_media {
+    width: 100%;
+    height: fit-content;
+
+    &_list {
+      width: 100%;
+      justify-content: right;
+    }
+
+    &_item {
+      padding-left: 0.865rem;
+
+      a {
+        height: 90%;
+        color: darken($accent-primary, 5%);
+        text-shadow: 2px 6px 1px $lightGray;
+
+        &:hover {
+          color: $accent-primary;
+          text-shadow: -2px 6px 1px $lightGray;
+          transition: all 300ms ease-in-out;
+        }
+      }
+    }
+  }
+}

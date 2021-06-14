@@ -1,0 +1,239 @@
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: rgba($color: $dark, $alpha: 0.8);
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  .overlay {
+    opacity: 0;
+    position: fixed;
+    height: 0;
+    top: 6rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    //   background-color: $dark;
+    background-image: linear-gradient($dark, transparent);
+  }
+
+  &.open {
+    // #toggleMenu {
+    //     display: flex;
+    //     z-index: 25;
+    // }
+    .overlay {
+      display: block;
+      z-index: 15;
+    }
+
+    .header_menu {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+      > span:nth-child(2) {
+        width: 0;
+      }
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  > nav {
+    height: inherit;
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    color: $white;
+  }
+
+  ul,
+  li {
+    list-style: none;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    text-align: none;
+    cursor: pointer;
+  }
+
+  &_logo {
+    height: inherit;
+
+    img {
+      height: 4rem;
+    }
+  }
+
+  &_menu {
+    > span {
+      display: block;
+      height: 0.25em;
+      width: 1.625em;
+      background-color: $white;
+      border-radius: 3px;
+      transition: all 300ms ease-in-out;
+      transform-origin: 2px 2px;
+
+      &:not(:last-child) {
+        margin-bottom: 0.25em;
+      }
+    }
+  }
+
+  &_pages {
+    --spacing: 1em;
+    a {
+      text-decoration: none;
+      color: $white;
+      text-transform: uppercase;
+      position: relative;
+      bottom: 0;
+      left: var(--spacing);
+      right: var(--spacing);
+      padding: calc(var(--spacing) / 2) var(--spacing);
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: var(--spacing);
+        right: var(--spacing);
+        height: 3px;
+        background-color: $white;
+        transform: scaleX(0);
+        transition: transform 150ms ease-in-out;
+        // color: lighten($color: $white, $amount: 50%);
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+
+      &:hover {
+        color: $lightGray;
+        transition: color 300ms ease-in-out;
+      }
+    }
+  }
+
+  .cta-btn {
+    border: none;
+    background-color: transparent;
+    padding: 0.3125em 0.625em;
+    color: $white;
+    font-size: $font-lg;
+    font-weight: 600;
+    position: relative;
+    transition: all 300ms;
+    overflow: hidden;
+    z-index: 1;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $accent-primary;
+      border: none;
+      z-index: -2;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: darken($accent-primary, 15%);
+      transition: all 0.3s;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: $white;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+
+  &_menu_toggle {
+    position: fixed;
+    height: max-content;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: $white;
+    z-index: 999;
+    width: 100%;
+
+    > a {
+      color: $lightGray;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0.625rem;
+      width: max-content;
+
+      &:hover {
+        transform: scale(1.5);
+        transition: transform 300ms ease-in-out;
+      }
+    }
+  }
+}
+
+.nav-scrolled {
+  // $color: antiquewhite;
+  // $color: floralwhite;
+  $color: darken(cadetblue, 30%);
+  background-color: $accent-primary;
+  box-shadow: 0px 4px 6px $lightGray;
+  > nav {
+    color: $color;
+  }
+
+  a {
+    font-weight: bold;
+    color: $color;
+
+    &:after {
+      background-color: $color;
+    }
+
+    &:hover {
+      color: darken($color, 20%);
+    }
+  }
+
+  .cta-btn {
+    color: $accent-primary;
+
+    &:before {
+      background: darken($lightGray, 15%);
+      color: $accent-primary;
+    }
+
+    &:after {
+      background: $lightGray;
+    }
+
+    &:hover {
+      color: $accent-primary;
+    }
+  }
+
+  .header_menu span {
+    background-color: $color;
+  }
+}

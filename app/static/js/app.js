@@ -7,6 +7,7 @@ const hero = document.querySelector(".hero");
 const footer = document.querySelector(".footer");
 const media = document.querySelector("#media");
 
+
 var overlayStatus = false;
 
 // Observers
@@ -34,10 +35,15 @@ const mediaObserver = new IntersectionObserver(function (
   mediaObserver
 ) {
   entries.forEach((entry) => {
+
+    
     if (!entry.isIntersecting) {
+      
       media.style.position = "fixed";
     } else {
+      const navScrolled = document.querySelector(".nav-scrolled");
       media.style.position = "relative";
+      navScrolled.style.boxShadow = "none";
     }
   });
 },
@@ -99,7 +105,6 @@ function hamburger_btnClicked() {
     overlayStatus = true;
   }
 
-  console.log(overlayStatus);
 }
 
 function fadeIn() {
@@ -116,9 +121,10 @@ function fadeOut() {
 
 function window_onResized() {
   const windowWidth = window.innerWidth;
-  if (windowWidth > 832 && overlay) {
-    // console.log(windowWidth);
+  
+  if (windowWidth > 892 && overlay) {
     fadeOut();
     header.classList.remove("open");
   }
+
 }

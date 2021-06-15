@@ -1,4 +1,5 @@
 .footer {
+  --color : coral;
   ul,
   li,
   a,
@@ -11,16 +12,19 @@
   height: 100vh;
   padding-top: 6.5rem;
 
-  .container {
-    padding-top: 0;
+  .background{
+    height: 100%;
     background-image: linear-gradient(
-      to bottom,
+      to top,
       $lightGray,
       $accent-secondary,
       $accent-primary
     );
+  }
+
+  .container {
+    padding-top: 0;
     height: 100%;
-    border-top: 5px solid $white;
     flex-direction: column;
   }
 
@@ -38,12 +42,14 @@
     }
 
     &_item {
+      padding-top: 0.6rem;
       padding-left: 0.865rem;
+      padding-bottom: 0.6rem;
 
       a {
         height: 90%;
-        color: coral;
-        text-shadow: 4px 2px 2px $dark;
+        color: var(--color);
+        text-shadow: 4px 2px 3px $dark;
 
         &:hover {
           color: darkgray;
@@ -53,6 +59,13 @@
           transition: all 300ms ease-in-out;
         }
       }
+    }
+  }
+
+  &_team {
+    h4 {
+      text-transform: uppercase;
+      color: $white;
     }
   }
 }

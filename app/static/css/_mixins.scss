@@ -1,5 +1,6 @@
 //BREAKPOINT
 @media (min-width: 55.75em) {
+
 }
 
 @media (max-width: 55.6875em) {
@@ -15,6 +16,7 @@
   }
 
   .hero {
+
     .container {
       padding: 0;
       margin: 0;
@@ -25,7 +27,7 @@
 @media (max-width: 39.9375em) {
   .hero {
     &_slogan {
-      margin: auto 1rem !important;
+      margin: min(2rem) 1rem 2rem 1rem !important;
     }
   }
 }

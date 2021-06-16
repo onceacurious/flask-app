@@ -91,7 +91,6 @@ strong {
 }
 
 .container {
-  position: relative;
   padding: 2rem;
 }
 
@@ -667,7 +666,7 @@ strong {
 .services-container .row-container .services-item .item-overlay {
   position: absolute;
   background-color: #000000;
-  width: inherit;
+  width: -moz-available;
   height: 0;
   border-radius: 0.625rem;
   opacity: 0.6;
@@ -676,6 +675,8 @@ strong {
 
 .services-container .row-container .services-item .show {
   height: inherit;
+  width: -moz-available;
+  width: inherit;
 }
 
 .portfolio {
@@ -720,19 +721,19 @@ strong {
 
 .footer_media {
   position: fixed;
-  bottom: 0.0625rem;
-  right: 1rem;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  bottom: 0.125rem;
+  right: 1rem;
 }
 
 .footer_media_list {
   width: 100%;
-  -webkit-box-pack: right;
-      -ms-flex-pack: right;
-          justify-content: right;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .footer_media_item {
@@ -893,6 +894,9 @@ strong {
   .services > .container > .services-container > .row-container > .services-item > img {
     height: 90%;
   }
+  .services > .container > .services-container > .row-container .item-overlay {
+    display: none;
+  }
 }
 
 @media (max-width: 25.875em) {
@@ -921,6 +925,9 @@ strong {
   }
   .services > .container > .services-container > .row-container > .services-item > img {
     height: inherit;
+  }
+  .services > .container > .services-container > .row-container > .services-item .item-overlay {
+    display: none;
   }
 }
 

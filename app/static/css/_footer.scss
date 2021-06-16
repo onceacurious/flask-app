@@ -1,5 +1,5 @@
 .footer {
-  --color : coral;
+  --color: coral;
   ul,
   li,
   a,
@@ -12,7 +12,7 @@
   height: 100vh;
   padding-top: 3.2rem;
 
-  .background{
+  .background {
     height: 100%;
     background-image: linear-gradient(
       to top,
@@ -30,15 +30,14 @@
 
   &_media {
     position: fixed;
-    // position: relative;
-    bottom: 0.0625rem;
-    right: 1rem;
     width: 100%;
     height: fit-content;
+    bottom: 0.125rem;
+    right: 1rem;
 
     &_list {
       width: 100%;
-      justify-content: right;
+      justify-content: flex-end;
     }
 
     &_item {

@@ -248,7 +248,7 @@
         .item-overlay {
           position: absolute;
           background-color: $dark;
-          width: inherit;
+          width: -moz-available;
           height: 0;
           border-radius: 0.625rem;
           opacity: 0.6;
@@ -257,7 +257,8 @@
 
         .show {
           height: inherit;
-          // width: -moz-available;
+          width: -moz-available;
+          width: inherit;
         }
       }
     }

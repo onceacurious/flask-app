@@ -110,6 +110,10 @@
           height: 90%;
         }
       }
+
+      .item-overlay {
+        display: none;
+      }
     }
   }
 }
@@ -135,6 +139,10 @@
         height: inherit;
         > img {
           height: inherit;
+        }
+
+        .item-overlay {
+          display: none;
         }
       }
     }

@@ -56,6 +56,18 @@ strong {
   &-ai-c {
     align-items: center;
   }
+
+  &-ac-sa{
+    align-content: space-around;
+  }
+
+  &-ac-se {
+    align-content: space-evenly;
+  }
+
+  &-ac-sb {
+    align-content: space-between;
+  }
 }
 
 .container {
@@ -73,15 +85,4 @@ strong {
   float: left;
   width: 16.66%;
 }
-//Visibility
-.hide-for-mobile {
-  @include breakpoints-down(small) {
-    display: none;
-  }
-}
 
-.hide-for-desktop {
-  @include breakpoints-up(medium) {
-    display: none;
-  }
-}

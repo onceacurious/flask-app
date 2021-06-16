@@ -1,43 +1,150 @@
 @keyframes fade-in {
-    from{
-        height: 0;
-    }
-    to {
-        opacity: 1;
-        height: 100%;
-    }
-
-    // from {
-    //     visibility: hidden;
-    //     opacity: 0;
-    // }
-    // 1% {
-    //     visibility: visible;
-    //     opacity: 0;
-    // }
-    // to {
-    //     visibility: visible;
-    //     opacity: 1;
-    // }
-    
+  from {
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: 100%;
+  }
 }
 
 @keyframes fade-out {
-    from{
-        height: 100%;
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-        height: 0;
-    }
-
-    
+  from {
+    height: 100%;
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+  }
 }
 
 .fade-in {
-    animation: fade-in 300ms ease-in-out forwards;
+  animation: fade-in 300ms ease-in-out forwards;
 }
 .fade-out {
-    animation: fade-out 300ms ease-in-out forwards;
+  animation: fade-out 300ms ease-in-out forwards;
+}
+
+//Visibility
+.hide-for-mobile {
+  //Max 55.6875em
+  @include breakpoints-down(small) {
+    display: none;
+  }
+}
+
+@media (max-width: 55.6875em) {
+  * {
+    line-height: normal;
+    font-size: 99%;
+    transition: all 300ms ease-in-out;
+  }
+
+  .features,
+  .services {
+    height: fit-content;
+  }
+  nav > a.header_logo {
+    flex-grow: 1;
+    padding: 0 1rem;
+    width: 100%;
+    justify-content: center;
+    transition: all 300ms ease;
+  }
+
+  .hero {
+    #lets_talk {
+      font-size: $font-lg;
+    }
+
+    .container {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .services {
+    font-size: 80%;
+
+    > .container > .services-container > .row-container {
+      > .services-item {
+        background-color: rgba($accent-secondary, 0.9);
+        width: 8.25rem;
+        height: 8.25rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 39.937em) {
+  .hero {
+    #lets_talk {
+      font-size: $font-n;
+    }
+
+    &_slogan {
+      margin: min(2rem) 1rem 2rem 1rem;
+    }
+  }
+
+  .services {
+    font-size: 70%;
+    padding-top: 2.5rem;
+
+    > .container > .services-container > .row-container {
+      margin: 0;
+      padding: 0.125rem;
+      height: fit-content;
+      //   flex-direction: column;
+      flex-wrap: wrap;
+      > * {
+        flex: 1;
+      }
+      > .services-item {
+        background-color: rgba($accent-primary, 0.9);
+        // width: 5.65rem;
+        // height: calc (inherit * 1.05);
+        height: 4.5rem;
+        > img {
+          height: 90%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 25.875em) {
+  .services {
+    font-size: 60%;
+    * {
+      padding: 0.125rem;
+      margin: 0;
+      height: fit-content;
+    }
+
+    > .container > .services-container > .row-container {
+      //   flex-direction: column;
+      flex-wrap: wrap;
+      > * {
+        flex: 1;
+      }
+      > .services-item {
+        background-color: rgba($white, 0.9);
+        // width: 5.65rem;
+        height: inherit;
+        > img {
+          height: inherit;
+        }
+      }
+    }
+  }
+}
+
+//Minimum
+.hide-for-desktop {
+  // 55.75em
+  @include breakpoints-up(medium) {
+    display: none;
+  }
 }

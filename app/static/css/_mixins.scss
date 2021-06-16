@@ -1,36 +1,10 @@
 //BREAKPOINT
-@media (min-width: 55.75em) {
+// @media (min-width: 55.75em) {
+// }
 
-}
-
-@media (max-width: 55.6875em) {
-  nav > a.header_logo {
-    flex-grow: 1;
-    padding: 0 1rem;
-    width: 100%;
-    justify-content: center;
-    transition: all 300ms ease;
-    > img {
-      width: 50%;
-    }
-  }
-
-  .hero {
-
-    .container {
-      padding: 0;
-      margin: 0;
-    }
-  }
-}
-
-@media (max-width: 39.9375em) {
-  .hero {
-    &_slogan {
-      margin: min(2rem) 1rem 2rem 1rem !important;
-    }
-  }
-}
+// @media (max-width: 55.6875em) {
+  
+// }
 
 // Breakpoints
 $breakpoints-up: (
